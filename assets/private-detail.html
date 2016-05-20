@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='privateProductDetailApp'>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>私募基金详情</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/private-detail.css" />
+</head>
+<body ng-controller="PrivateProductDetailController as vm">
+
+<div class="ux-tabs" style="width:800px;margin:30px auto 0;">
+    <ul class="ux-tabs-header">
+        <li class="ux-tabs-item active">单位净值走势</li>
+    </ul>
+    <ul class="ux-tabs-box">
+        <li class="ux-tabs-item ux-high-chart">
+            <dl class="high-chart-tabs ux-clear" my-chart data-month="1">
+                <dt>选择时间：</dt>
+                <dd class="active" data-month="1">1个月</dd>
+                <dd data-month="3">3个月</dd>
+                <dd data-month="6">6个月</dd>
+                <dd data-month="12">1年</dd>
+                <dd data-month="16">3年</dd>
+                <dd data-month="a">今年以来</dd>
+                <dd data-month="b">最大</dd>
+            </dl>
+            <highchart id="chart" config="chartConfig"></highchart>
+        </li>
+    </ul>
+</div>
+               
+<script src="js/angular.min.js"></script>
+<script src="js/highstock.min.js"></script>
+<script src="js/highcharts-ng.min.js"></script>
+<script src="js/privateController.js"></script>
+</body>
+</html>
