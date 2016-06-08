@@ -14,24 +14,16 @@
             return {
                 getData: function (params) {
                     var deferred = $q.defer();
-                    var promise = $http.get("xxx" + params);
+                    var promise = $http.get("js/privates.json?month=" + params);
                     promise.then(
                         // 通讯成功的处理
                         function (answer) {
-                            answer.status = true;
-                            answer.chartData = [0, 20, 30, 40, 60, 80, 100, 20, 30, 60, 10, 30, 60, 80, 100, 20, 40, 50];
-                            answer.chartDate = ['2015-08-01', '2015-08-02', '2015-08-03', '2015-08-04', '2015-08-05', '2015-08-06', '2015-08-07', '2015-08-08', '2015-08-09', '2015-08-10',
-                                '2015-08-11', '2015-08-12', '2015-08-13', '2015-08-14', '2015-08-15', '2015-08-16', '2015-08-17', '2015-08-18'
-                            ];
+                            // answer.status = true;
                             deferred.resolve(answer);
                         },
                         // 通讯失败的处理
                         function (error) {
-                            error.status = false;
-                            error.chartData = [0, 20, 30, 40, 60, 80, 100, 20, 30, 60, 10, 30, 60, 80, 100, 20, 40, 50];
-                            error.chartDate = ['2015-08-01', '2015-08-02', '2015-08-03', '2015-08-04', '2015-08-05', '2015-08-06', '2015-08-07', '2015-08-08', '2015-08-09', '2015-08-10',
-                                '2015-08-11', '2015-08-12', '2015-08-13', '2015-08-14', '2015-08-15', '2015-08-16', '2015-08-17', '2015-08-18'
-                            ];
+                            // error.status = false;
                             deferred.reject(error);
                         });
                     return promise;
@@ -43,15 +35,16 @@
         .directive('myChart', ['myChartService', function (myChartService) {
             return {
                 restrict: "AE",
-                link: function (scope, element) {
+                link: function (scope, element,attr) {
 
-                    scope.month = element.data("month");
+                    // console.log(attr);
+                    scope.month = element.attr('data-month');
 
                     //TAB选择
                     element.find("dd").on("click", function () {
                         angular.element(this).parent(".high-chart-tabs").find("dd").removeClass("active");
                         angular.element(this).addClass('active');
-                        scope.month = angular.element(this).data("month");
+                        scope.month = angular.element(this).attr("data-month");
                         scope.getChartData(scope.month);
                         scope.fnConfig();
                         scope.$apply();
@@ -62,15 +55,14 @@
                         myChartService.getData(params).then(
                             function (answer) {
                                 scope.data = answer;
-                                scope.chartData = answer.chartData;
-                                scope.chartDate = answer.chartDate;
+                                console.log(answer);
+                                scope.chartData = answer.data.chartData;
+                                scope.chartDate = answer.data.chartDate;
                                 scope.fnConfig();
                             },
                             function (error) {
                                 scope.error = error;
-                                scope.chartData = error.chartData;
-                                scope.chartDate = error.chartDate;
-                                scope.fnConfig();
+                                console.log(error);
                             }
                         )
                     }
