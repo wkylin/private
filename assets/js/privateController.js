@@ -4,7 +4,7 @@
     angular.module('privateProductDetailApp', ['highcharts-ng'])
         .controller('PrivateProductDetailController', function ($scope, $http, $location, $element, $window, $q, $interval) {
 
-            var vm = this;
+            // var vm = this;
             
         })
   
@@ -14,7 +14,7 @@
             return {
                 getData: function (params) {
                     var deferred = $q.defer();
-                    var promise = $http.get("js/privates.json?month=" + params);
+                    var promise = $http.get("js/private.json?month=" + params);
                     promise.then(
                         // 通讯成功的处理
                         function (answer) {
@@ -37,7 +37,8 @@
                 restrict: "AE",
                 link: function (scope, element,attr) {
 
-                    // console.log(attr);
+                    console.log(attr);
+                    
                     scope.month = element.attr('data-month');
 
                     //TAB选择
@@ -65,7 +66,7 @@
                                 console.log(error);
                             }
                         )
-                    }
+                    };
 
                     //chart Config
                     scope.fnConfig = function () {
@@ -163,7 +164,7 @@
                                 }
                             }
                         }
-                    }
+                    };
 
                     //初始化数据
                     scope.getChartData(scope.month);
