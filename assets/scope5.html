@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller='MainController'>
+        <input type="text" ng-model="color" placeholder="Enter a color"/>
+        {{color}}
+        <hello-world color='color'></hello-world>
+        <!--//注意这里的写法-->
+    </div>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('MainController', function () {
+        });
+        app.directive('helloWorld', function () {
+            return {
+                scope: {color: '='},
+                restrict: 'AE',
+                replace: true,
+                template: '<div style="background-color:{{color}}">Hello World<div><input type="text" ng-model="color"></div></div>'
+            }
+        });
+    </script>
+</body>
+</html>

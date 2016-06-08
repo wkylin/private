@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller='MainController'>
+    父亲: {{name}}
+    <input ng-model="name" />
+    <div my-directive></div>
+</div>
+
+<script>
+    angular.module('myApp', [])
+            .controller('MainController', function ($scope) {
+                $scope.name = 'King';
+            })
+            .directive('myDirective', function () {
+                return {
+                    restrict: 'EA',
+                    scope: false,//改变此处的取值,看看有什么不同
+                    template: '<div>儿子: {{ name }} <input ng-model="name" /></div>'
+                };
+            });
+</script>
+</body>
+</html>

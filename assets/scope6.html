@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+    <script src="js/angular.min.js"></script>
+    <!--http://my.oschina.net/u/1992917/blog/406421-->
+</head>
+<body>
+    <div ng-controller='MainController'>
+        <input type="text" ng-model="name" placeholder="Enter a color"/>
+        {{name}}
+        <hello-world data-hello="say();" name="wkylin"></hello-world>
+        <!--//注意这里   属性不能驼峰命名 -->
+    </div>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('MainController', function ($scope) {
+            $scope.say = function () {
+                alert('hello');
+            }
+            $scope.name = 'King';
+        });
+        app.directive('helloWorld', function () {
+            return {
+                scope: {
+                    sayOther: '&hello',
+                    name: '@'
+                },
+                restrict: 'AE',
+                replace: true,
+                template: '<button type="button" ng-bind="name" ng-init="sayOther();"></button>'
+            }
+        });
+    </script>
+</body>
+</html>

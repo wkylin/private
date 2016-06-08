@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller='MainController'>
+    <input type="text" ng-model="color" placeholder="Enter a color"/>
+    <hello-world></hello-world>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('MainController', function () {
+    });
+    app.directive('helloWorld', function () {
+        return {
+            scope: {}, // false true {}
+            restrict: 'AE',
+            replace: true,
+            template: '<p style="background-color:{{color}}">Hello World</p>'
+        }
+    });
+</script>
+</body>
+</html>
