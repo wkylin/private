@@ -1,6 +1,6 @@
-dd{
-    margin:0;
-    padding:0;
+dd {
+    margin: 0;
+    padding: 0;
 }
 
 .ux-tabs {
@@ -50,285 +50,11 @@ dd{
     margin-top: 5px;
 }
 
-.ux-step {
-    margin: 45px 0 30px 0;
-}
-
-.ux-step-header {
-    border-bottom: 4px solid #e5e5e5;
-    padding: 10px;
-    font-size: 20px;
-    color: #444;
-    margin-bottom: 30px;
-}
-
-.ux-icons {
-    display: inline-block;
-    overflow: hidden;
-    font-size: 0;
-    line-height: 0;
-    margin: 0 5px;
-}
-
-.ux-icons-cart,
-.ux-icons-chat,
-.ux-icons-tick,
-.ux-icons-note,
-.ux-icons-pointer {
-    background: url('../img/ux-icons-ticks.png') 0 0 no-repeat transparent;
-}
-
-.ux-icons-cart {
-    width: 25px;
-    height: 20px;
-    background-position: 0 0;
-}
-
-.ux-icons-chat {
-    width: 24px;
-    height: 20px;
-    background-position: -1px -30px;
-}
-
-.ux-icons-tick {
-    width: 20px;
-    height: 20px;
-    background-position: -3px -121px;
-}
-
-.ux-icons-note {
-    width: 24px;
-    height: 20px;
-    background-position: 0 -90px;
-}
-
-.ux-icons-pointer {
-    width: 21px;
-    height: 21px;
-    background-position: -2px -60px;
-}
-
-.ux-step-item {
-    border: 1px solid #f7480f;
-}
-
-.ux-step-item-header {
-    text-align: center;
-    font-size: 18px;
-    color: #fff;
-    background-color: #f7480f;
-    height: 42px;
-    line-height: 42px;
-}
-
-.ux-step-item-body {
-    padding: 20px;
-    text-align: center;
-}
-
-.ux-step-item-body p {
-    margin: 5px;
-    line-height: 23px;
-    font-size: 12px;
-}
-
-.ux-step-item-body h2 {
-    font-size: 27px;
-    color: #666;
-    margin: 0;
-}
-
-.ux-step-item-body strong {
-    display: block;
-    font-size: 22px;
-    color: #f11616;
-    font-weight: normal;
-}
-
-.ux-step-second {
-    border-color: #f76535;
-}
-
-.ux-step-second .ux-step-item-header {
-    background-color: #f76535;
-}
-
-.ux-step-third {
-    border-color: #f7815b;
-}
-
-.ux-step-third .ux-step-item-header {
-    background-color: #f7815b;
-}
-
-.ux-step-fourth {
-    border-color: #64b976;
-}
-
-.ux-step-fourth .ux-step-item-header {
-    background-color: #64b976;
-}
-
-.ux-step-text {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
-    color: #666;
-}
-
-.ux-step-arrow {
-    padding: 10px 0 20px;
-    text-align: center;
-}
-
-.ux-step-arrow span {
-    display: inline-block;
-    width: 29px;
-    height: 16px;
-    font-size: 0;
-    line-height: 0;
-    background: url("../img/ux-icons-ticks.png") 0 -164px no-repeat transparent;
-}
-
-.ux-chat-form {
-    margin: 10px 0;
-}
-
-.ux-chat-form-item {
-    margin-bottom: 20px;
-    text-align: left;
-    position: relative;
-    left: 0;
-    top: 0;
-}
-
-.ux-chat-form-item span {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-.ux-chat-form-item button.ux-input-link{
-    display:block;
-    position:absolute;
-    right:3px;
-    bottom:0;
-    width:120px;
-    height:38px;
-    line-height:38px;
-    font-size:14px;
-    text-align:center;
-    color:#fff;
-    background-color:#f6b955;
-    cursor:pointer;
-    border:0 none;
-    outline:0 none;
-}
-
-.ux-chat-form-item button.ux-link-disable{
-    background-color:#aaa;
-}
-
-.ux-chat-form label {
-    font-size: 14px;
-    color: #444;
-    width:75px;
-    text-align:right;
-    display:inline;
-    float:left;
-    margin-top:10px;
-}
-
-
-.ux-chat-form input.ux-input-text {
-    width: 210px;
-    height: 38px;
-    border: 1px solid #c4c4c4;
-    box-shadow: inset 2px 2px 8px rgba(196, 196, 196, 0.8);
-    padding: 5px;
-    outline: 0 none;
-}
-
-.ux-chat-form input.ux-input-button {
-    width: 98%;
-    border: 1px solid #f10d0d;
-    border-radius: 2px;
-    height: 48px;
-    background-color: #fff;
-    text-align: center;
-    color: #f10d0d;
-    font-size: 18px;
-    outline: 0 none;
-    cursor:pointer;
-}
-
-.ux-chat-form input.ux-input-disabled{
-    background-color:#aaa;
-    border:1px solid #aaa;
-    color:#fff;
-}
-
-.ux-chat-form .ux-form-proving{
-    position:absolute;
-    right:10px;
-    top:5px;
-    font-size:20px;
-}
-.ux-chat-form .ux-radic{
-    color:darkgreen;
-}
-
-.ux-chat-form .ux-times {
-    color: #f7480f;
-}
-
-.ux-chat-form .ux-proving-code{
-    left:150px;
-    position: absolute;
-    top: 5px;
-    font-size: 20px;
-}
-
 .ng-cloak {
-    display:none;
+    display: none;
 }
-/* ux-table */
-
-.ux-table {
-    width: 100%;
-}
-
-.ux-tabs-dl {
-    border-bottom:1px dotted #e6e6e6;
-    margin-bottom:20px;
-    padding-bottom:10px;
-}
-
-.ux-tabs-dl.last{
-    border:none;
-}
-.ux-tabs-dl dt{
-    font-size:14px;
-    color:#444;
-    margin-bottom:20px;
-}
-
-.ux-tabs-dl dd{
-    font-size:12px;
-    color:#666;
-    margin-bottom:15px;
-}
-
-.ux-column-left{
-    width:150px;
-    float:left;
-    display:inline;
-}
-
-
 
 /* ux-high-chart */
-
 .ux-clear:after {
     visibility: hidden;
     display: block;
@@ -339,37 +65,53 @@ dd{
 }
 
 .ux-clear {
-    zoom: 1; /* for IE6 IE7 */
+    zoom: 1;
 }
-.ux-high-chart{
-    padding:20px;
-    color:#666;
-    font-size:12px;
+
+.ux-high-chart {
+    padding: 20px;
+    color: #666;
+    font-size: 12px;
 }
-.high-chart-tabs{
-    margin-bottom:20px;
+
+.high-chart-tabs {
+    margin-bottom: 20px;
 
 }
+
 .high-chart-tabs dt,
-.high-chart-tabs dd{
-    width:80px;
-    height:30px;
-    line-height:30px;
-    float:left;
-    display:inline;
-    text-align:left;
+.high-chart-tabs dd {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    display: inline;
+    text-align: left;
 }
 
-.high-chart-tabs dd{
-    border:1px solid #e5e5e5;
-    background-color:#f6f6f6;
-    text-align:center;
-    margin-right:10px;
-    cursor:pointer;
+.high-chart-tabs dd {
+    border: 1px solid #e5e5e5;
+    background-color: #f6f6f6;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
 }
 
-.high-chart-tabs dd.active{
+.high-chart-tabs dd.active {
     border: 1px solid #94c6f3;
     background-color: #94c6f3;
-    color:#fff;
+    color: #fff;
+}
+
+@media screen and (max-device-width: 480px) {
+    .high-chart-tabs dt {
+        float: none;
+        display: block;
+    }
+
+    .high-chart-tabs dd {
+        float: none;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
 }
